@@ -33,6 +33,10 @@ public class VerifyUtil {
      * 生成最大数值
      */
     private static final int GENERATE_MAX_VALUE = 1000;
+    /** 是否打印比对情况,自己控制是否打印比对情况 */
+    private final static boolean WHETHER_TO_PRINT_THE_COMPARISON = true;
+    /** 分隔符 */
+    private final static String DELIMITER = "-------------------------------------------------------------------------";
 
     /**
      * <p>
@@ -50,17 +54,23 @@ public class VerifyUtil {
     public static boolean verify(final Function<List<Number>, List<Number>> sortFunction,
                                  boolean isAsc, boolean isFloat) {
         for (int i = 0; i < VERIFY_COUNT; i++) {
+            if (WHETHER_TO_PRINT_THE_COMPARISON)
+                System.out.println(DELIMITER);
             // 1.生成数组
             List<Number> generationDataList = IntStream.rangeClosed(1, GENERATE_COUNT).parallel().mapToObj(v -> {
                 return isFloat ? (GENERATE_MAX_VALUE * Math.random()) : (int) (GENERATE_MAX_VALUE * Math.random());
             }).collect(Collectors.toList());
             // 2.算法排序得出结果
             List<Number> sortResult = sortFunction.apply(generationDataList);
+            if (WHETHER_TO_PRINT_THE_COMPARISON)
+                System.out.println("算法排序结果为："+sortResult);
             // 3.正确的排序结果
             List<Number> successAscList = generationDataList.stream()
                     .sorted().collect(Collectors.toList());
             if (!isAsc)
                 Collections.reverse(successAscList);
+            if (WHETHER_TO_PRINT_THE_COMPARISON)
+                System.out.println("正确排序结果为："+successAscList);
             boolean success = compareTwoSets(sortResult, successAscList);
             if (!success) {
                 // 自己写的算法排序结果错误
@@ -87,7 +97,10 @@ public class VerifyUtil {
      */
     public static boolean verify(final Function<int[], int[]> sortFunction,
                                  boolean isAsc) {
+        long startTime = System.currentTimeMillis();
         for (int i = 0; i < VERIFY_COUNT; i++) {
+            if (WHETHER_TO_PRINT_THE_COMPARISON)
+                System.out.println(DELIMITER);
             int[] generateArr = new int[GENERATE_COUNT];
             List<Integer> generateList = new ArrayList<>(GENERATE_COUNT);
             for (int j = 0; j < GENERATE_COUNT; j++) {
@@ -99,9 +112,13 @@ public class VerifyUtil {
             for (int sortResult : sortResults) {
                 sortList.add(sortResult);
             }
+            if (WHETHER_TO_PRINT_THE_COMPARISON)
+                System.out.println("算法排序结果为："+sortList);
             Collections.sort(generateList);
             if (!isAsc)
                 Collections.reverse(generateList);
+            if (WHETHER_TO_PRINT_THE_COMPARISON)
+                System.out.println("正确排序结果为："+generateList);
             boolean success = compareTwoSets(sortList, generateList);
             if (!success) {
                 System.out.println("自己写的算法排序结果为：\r\n"+sortList);
@@ -109,6 +126,11 @@ public class VerifyUtil {
                 return success;
             }
         }
+        long millisecond = (System.currentTimeMillis() - startTime);
+        System.out.println("验证结果次数："+VERIFY_COUNT+"次\t"+"数组大小："+GENERATE_COUNT+"个元素");
+        System.out.println("总耗时："+millisecond+"毫秒");
+        System.out.println("总耗时："+millisecond/1000+"秒");
+
         return true;
     }
 
