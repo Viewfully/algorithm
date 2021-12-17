@@ -3,8 +3,9 @@
 ## 介绍
 算法演示仓库，用于编写/存储基本、初级、中级、高级算法编码处理过程。
 仅为作者练习、学习项目，公开学习代码
-排序算法可视化演示可查看
-https://visualgo.net/
+### 资料区：
+####排序算法可视化演示可查看 https://visualgo.net/
+#### labuladong算法小抄在线阅读：https://labuladong.gitee.io/algo/     github:  https://github.com/labuladong/fucking-algorithm
 
 
 ## 安装教程
