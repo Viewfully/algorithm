@@ -13,7 +13,6 @@ import java.util.stream.Stream;
 /**
  * @ClassName: VerifyUtil
  * @Author: Jack.Zhang
- * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
  * @Description: 验证工具，验证算法排序准确性工具类，即：{@code 对数器}
  * @Date: 2021-11-22
  */
@@ -48,7 +47,6 @@ public class VerifyUtil {
      * @param isFloat      是否为浮点数
      * @return boolean  返回 {@code sortFunction} 排序方法是否可行
      * @author Jack.Zhang 2021/11/22 14:14
-     * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
      * @since 1.0.0
      */
     public static boolean verify(final Function<List<Number>, List<Number>> sortFunction,
@@ -92,7 +90,6 @@ public class VerifyUtil {
      * @param isAsc        是否为正序
      * @return boolean  返回 {@code sortFunction} 排序方法是否可行
      * @author Jack.Zhang 2021/11/22 14:14
-     * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
      * @since 1.0.0
      */
     public static boolean verify(final Function<int[], int[]> sortFunction,
@@ -143,7 +140,6 @@ public class VerifyUtil {
      * @param successList  正确的算法排序结果
      * @return boolean 两集合排序结果是否相同
      * @author Jack.Zhang 2021/11/22 14:48
-     * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
      * @since 1.0.0
      * @see
      */

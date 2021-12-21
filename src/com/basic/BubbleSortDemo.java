@@ -5,7 +5,6 @@ import com.utils.VerifyUtil;
 /**
  * @ClassName: BubbleSortDemo
  * @Author: Jack.Zhang
- * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
  * @Description: #冒泡排序 代码演示
  * @Date: 2021-11-22
  */
@@ -18,7 +17,6 @@ public class BubbleSortDemo {
 	 * @param arr  输入无序数组
      * @return int[]  返回有序数组，从小到大排序
      * @author Jack.Zhang 2021/11/22 15:35
-     * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
      * @since 1.0.0
      */
     public static int[] bubble(int[] arr) {
