@@ -5,7 +5,6 @@ import com.utils.VerifyUtil;
 /**
  * @ClassName: SelectSortDemo
  * @Author: Jack.Zhang
- * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
  * @Description:  #选择排序算法  代码演示
  * @Date: 2021-11-22
  */
@@ -22,7 +21,6 @@ public class SelectSortDemo {
      * @param arr
      * @return int[]
      * @author Jack.Zhang 2021/11/22 15:25
-     * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
      * @since 1.0.0
      * @see
      */

@@ -5,7 +5,6 @@ import com.utils.VerifyUtil;
 /**
  * @ClassName: MergeSortDemo
  * @Author: Jack.Zhang
- * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
  * @Description: #归并排序 代码演示
  * @Date: 2021-11-22
  */
@@ -31,7 +30,6 @@ public class MergeSortDemo {
 	 * @param arr
      * @return int[]
      * @author Jack.Zhang 2021/11/23 13:53
-     * @link <a href = "mailto:zhangyue26@hikvision.com.cn">联系作者<a/>
      * @since 1.0.0
      * @see
      */
