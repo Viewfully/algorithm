@@ -87,6 +87,28 @@ public class ArrayGenerateUtil {
         return resultArr;
     }
 
+    /**
+     * 生成乱序整形数组
+     * @return 乱序数组
+     */
+    public static int[] generateRandomIntArray(){
+        int[] arr = new int[GENERATE_COUNT];
+        for (int i = 0; i < GENERATE_COUNT; i++) {
+            arr[i] = (int) (MAXVALUE * Math.random());
+        }
+        return arr;
+    }
 
+    /**
+     * 生成乱序浮点型数组
+     * @return 乱序数组
+     */
+    public static double[] generateRandomDoubleArray(){
+        double[] arr = new double[GENERATE_COUNT];
+        for (int i = 0; i < GENERATE_COUNT; i++) {
+            arr[i] = MAXVALUE * Math.random();
+        }
+        return arr;
+    }
 
 }
