@@ -65,7 +65,9 @@ public class QuickSortDemo {
             }
             // 此时第一个循环结束，关键值的位置已经确定了，左边的值都比关键值小，右边的值都比关键字大，但是左右两边可能还不是顺序的
         }
+        // 左边序列，第一个索引位置到关键值索引-1
         if (start>low) quickSort(source, low, start - 1);
+        // 右边序列，从关键值索引+1到最后一个
         if (end<high) quickSort(source, end + 1, high);
     }
 
